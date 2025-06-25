@@ -17,38 +17,33 @@ col1, col2, col3, col4, col5 = st.columns(5) # 5 columnas para 5 productos
 # Valores de ejemplo para las leyes
 with col1:
     st.write("**Cabeza**")
-    ley_cabeza_pb = st.number_input("Pb en Cabeza", value=5.5, format="%.1f", key="cabeza_pb")
-    ley_cabeza_zn = st.number_input("Zn en Cabeza", value=7.5, format="%.1f", key="cabeza_zn")
+    ley_cabeza_pb = st.number_input("Pb en Cabeza", value=5.5, format="%.2f", key="cabeza_pb")
+    ley_cabeza_zn = st.number_input("Zn en Cabeza", value=7.5, format="%.2f", key="cabeza_zn")
     ley_cabeza_cu = st.number_input("Cu en Cabeza", value=0.8, format="%.2f", key="cabeza_cu")
-    # Ley de estaño eliminada
 
 with col2:
     st.write("**Conc.Pb**")
-    ley_conc_pb_pb = st.number_input("Pb en Conc.Pb", value=68.0, format="%.1f", key="conc_pb_pb")
-    ley_conc_pb_zn = st.number_input("Zn en Conc.Pb", value=5.0, format="%.1f", key="conc_pb_zn")
+    ley_conc_pb_pb = st.number_input("Pb en Conc.Pb", value=68.0, format="%.2f", key="conc_pb_pb")
+    ley_conc_pb_zn = st.number_input("Zn en Conc.Pb", value=5.0, format="%.2f", key="conc_pb_zn")
     ley_conc_pb_cu = st.number_input("Cu en Conc.Pb", value=0.5, format="%.2f", key="conc_pb_cu")
-    # Ley de estaño eliminada
 
 with col3:
     st.write("**Conc.Zn**")
-    ley_conc_zn_pb = st.number_input("Pb en Conc.Zn", value=1.0, format="%.1f", key="conc_zn_pb")
-    ley_conc_zn_zn = st.number_input("Zn en Conc.Zn", value=55.0, format="%.1f", key="conc_zn_zn")
+    ley_conc_zn_pb = st.number_input("Pb en Conc.Zn", value=1.0, format="%.2f", key="conc_zn_pb")
+    ley_conc_zn_zn = st.number_input("Zn en Conc.Zn", value=55.0, format="%.2f", key="conc_zn_zn")
     ley_conc_zn_cu = st.number_input("Cu en Conc.Zn", value=0.2, format="%.2f", key="conc_zn_cu")
-    # Ley de estaño eliminada
 
 with col4:
     st.write("**Conc.Cu**") # Nuevo Producto
-    ley_conc_cu_pb = st.number_input("Pb en Conc.Cu", value=1.5, format="%.1f", key="conc_cu_pb")
-    ley_conc_cu_zn = st.number_input("Zn en Conc.Cu", value=2.0, format="%.1f", key="conc_cu_zn")
-    ley_conc_cu_cu = st.number_input("Cu en Conc.Cu", value=25.0, format="%.1f", key="conc_cu_cu")
-    # Ley de estaño eliminada
+    ley_conc_cu_pb = st.number_input("Pb en Conc.Cu", value=1.5, format="%.2f", key="conc_cu_pb")
+    ley_conc_cu_zn = st.number_input("Zn en Conc.Cu", value=2.0, format="%.2f", key="conc_cu_zn")
+    ley_conc_cu_cu = st.number_input("Cu en Conc.Cu", value=25.0, format="%.2f", key="conc_cu_cu")
 
 with col5:
     st.write("**Relave**")
-    ley_relave_pb = st.number_input("Pb en Relave", value=0.2, format="%.1f", key="relave_pb")
-    ley_relave_zn = st.number_input("Zn en Relave", value=0.6, format="%.1f", key="relave_zn")
+    ley_relave_pb = st.number_input("Pb en Relave", value=0.2, format="%.2f", key="relave_pb")
+    ley_relave_zn = st.number_input("Zn en Relave", value=0.6, format="%.2f", key="relave_zn")
     ley_relave_cu = st.number_input("Cu en Relave", value=0.05, format="%.2f", key="relave_cu")
-    # Ley de estaño eliminada
 
 # Recopilar las leyes en el diccionario (Sn eliminado)
 leyes = {
@@ -131,7 +126,6 @@ products_data = {
     "Leyes %Pb": [leyes["Cabeza"]["Pb"], leyes["Conc.Pb"]["Pb"], leyes["Conc.Zn"]["Pb"], leyes["Conc.Cu"]["Pb"], leyes["Relave"]["Pb"]],
     "Leyes %Zn": [leyes["Cabeza"]["Zn"], leyes["Conc.Pb"]["Zn"], leyes["Conc.Zn"]["Zn"], leyes["Conc.Cu"]["Zn"], leyes["Relave"]["Zn"]],
     "Leyes %Cu": [leyes["Cabeza"]["Cu"], leyes["Conc.Pb"]["Cu"], leyes["Conc.Zn"]["Cu"], leyes["Conc.Cu"]["Cu"], leyes["Relave"]["Cu"]],
-    # Leyes %Sn eliminada
 }
 
 df = pd.DataFrame(products_data)
